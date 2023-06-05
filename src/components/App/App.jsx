@@ -11,11 +11,11 @@ export class App extends Component {
     bad: 0,
   };
 
-  onBtnClick(item) {
+  onBtnClick = item => {
     this.setState(prevState => ({
       [item]: prevState[item] + 1,
     }));
-  }
+  };
 
   countTotalFeedback() {
     return Object.values(this.state).reduce((acc, item) => acc + item, 0);
@@ -34,7 +34,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={item => this.onBtnClick(item)}
+            onLeaveFeedback={this.onBtnClick}
           />
         </Section>
         <Section title="Statistics">
