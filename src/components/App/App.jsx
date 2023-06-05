@@ -40,7 +40,7 @@ export class App extends Component {
         <Section title="Statistics">
           {total ? (
             <Statistics
-              state={this.state}
+              data={this.state}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-export const Statistics = ({ state, total, positivePercentage }) => {
+export const Statistics = ({ data, total, positivePercentage }) => {
   return (
     <>
-      {Object.entries(state).map(item => (
+      {Object.entries(data).map(item => (
         <p key={item[0]}>{item.join(': ')}</p>
       ))}
       <p>Total: {total}</p>
@@ -13,7 +13,7 @@ export const Statistics = ({ state, total, positivePercentage }) => {
 };
 
 Statistics.propTypes = {
-  state: PropTypes.shape({
+  data: PropTypes.shape({
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
